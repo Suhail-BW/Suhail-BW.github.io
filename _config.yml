@@ -1,0 +1,55 @@
+# Site settings
+title: Suhail Bashir
+description: Computer Science Master's student at University of Oulu researching Vision-Language Models and multimodal alignment
+url: https://suhail-bw.github.io
+baseurl: ""
+
+# Author information
+author:
+  name: Suhail Bashir
+  email: suhail.bashir@epfl.ch
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM  # GitHub Flavored Markdown
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+    css_class: 'highlight'
+
+# Collections for blog posts
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Default values
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - .gitignore
+  - vendor/
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# RSS feed
+feed:
+  path: feed.xml

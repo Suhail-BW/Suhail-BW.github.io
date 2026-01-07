@@ -74,6 +74,10 @@ a:hover {
   text-decoration: none;
 }
 
+body {
+  background-color: #fafafa;
+}
+
 body,
 td,
 th,
@@ -81,24 +85,27 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h2 {
-  margin: 0;
+  margin: 0 0 12px 0;
   font-weight: normal;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 24px;
+  color: #333;
 }
 
 .papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -139,4 +146,158 @@ span.highlight {
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
+}
+
+/* Enhanced styles for better visual appeal */
+
+/* Profile photo enhancement */
+img[alt="profile photo"] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 8%;
+}
+
+img[alt="profile photo"]:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved table styling for better content separation */
+table {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Better spacing for project sections */
+td[style*="padding:16px"] {
+  padding: 20px !important;
+}
+
+/* Smooth transitions for all links */
+a {
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Improved image styling for project thumbnails */
+img {
+  border-radius: 6px;
+  transition: transform 0.2s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Better logo styling */
+img[width="95"],
+img[width="120"] {
+  transition: opacity 0.3s ease-in-out;
+  filter: grayscale(20%);
+}
+
+img[width="95"]:hover,
+img[width="120"]:hover {
+  filter: grayscale(0%);
+  opacity: 0.9;
+}
+
+/* Main Navigation (Home & Blog) */
+.main-nav-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto 20px auto;
+  padding: 0 20px;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 40px;
+  background: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  min-width: 140px;
+}
+
+.nav-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.nav-home {
+  border-color: #e2e8f0;
+}
+
+.nav-home:hover {
+  border-color: #1772d0;
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+}
+
+.nav-blog {
+  background: linear-gradient(135deg, #1772d0 0%, #1565b8 100%);
+  border-color: #1772d0;
+}
+
+.nav-blog:hover {
+  background: linear-gradient(135deg, #f09228 0%, #e67e00 100%);
+  border-color: #f09228;
+}
+
+.nav-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.nav-text {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.nav-blog .nav-text {
+  color: #fff;
+}
+
+.nav-home:hover .nav-text {
+  color: #1772d0;
+}
+
+.nav-blog:hover .nav-text {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main-navigation {
+    gap: 16px;
+    padding: 20px 16px;
+  }
+
+  .nav-button {
+    padding: 16px 24px;
+    min-width: 110px;
+  }
+
+  .nav-icon {
+    font-size: 28px;
+  }
+
+  .nav-text {
+    font-size: 16px;
+  }
 }

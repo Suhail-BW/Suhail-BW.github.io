@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="blog-container">
+  <div class="blog-content">
+    {% include main-navigation.html %}
+
+    <div class="blog-header">
+      <h1>Blog</h1>
+      <p class="blog-subtitle">Thoughts on machine learning, computer vision, and research</p>
+    </div>
+
+    <div class="posts-list">
+      {% assign posts = site.posts | sort: 'date' | reverse %}
+      {% if posts.size > 0 %}
+        {% for post in posts %}
+          <article class="post-card">
+            <h2 class="post-card-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <div class="post-card-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+            {% if post.description %}
+              <p class="post-card-excerpt">{{ post.description }}</p>
+            {% else %}
+              <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            {% endif %}
+            <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+          </article>
+        {% endfor %}
+      {% else %}
+        <p class="no-posts">No blog posts yet. Check back soon!</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
